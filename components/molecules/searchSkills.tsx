@@ -2,7 +2,14 @@ import React, { useState } from "react";
 import { StyleSheet, View, Text } from "react-native";
 import { Button, Searchbar } from "react-native-paper";
 
-const SearchSkills: React.FC = () => {
+type SearchSkillsProps = {
+  addedSkills: string[];
+  handleAddedSkills: React.Dispatch<React.SetStateAction<string[]>>;
+};
+
+const SearchSkills: React.FC<SearchSkillsProps> = (
+  props: SearchSkillsProps
+) => {
   const [searchedSkill, setSearchedSkill] = useState<string>();
 
   return (
@@ -18,7 +25,12 @@ const SearchSkills: React.FC = () => {
       {searchedSkill && (
         <View style={styles.searchedSkillContainer}>
           <Text style={styles.searchedSkillText}>{searchedSkill}</Text>
-          <Button mode="outlined" onPress={() => {}}>
+          <Button
+            mode="outlined"
+            onPress={() =>
+              props.handleAddedSkills([...props.addedSkills, searchedSkill])
+            }
+          >
             Add
           </Button>
         </View>

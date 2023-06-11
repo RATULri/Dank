@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { Chip } from "react-native-paper";
 
-const TagChips: React.FC = () => {
+type TagChipProps = {
+  chipName: string;
+};
+
+const TagChips: React.FC<TagChipProps> = (props: TagChipProps) => {
   return (
     <View style={style.container}>
       <Chip onPress={() => {}} mode="outlined" onClose={() => {}}>
-        Example
+        {props.chipName}
       </Chip>
     </View>
   );

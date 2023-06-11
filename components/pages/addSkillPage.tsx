@@ -1,19 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import { StyleSheet, View } from "react-native";
 import PageHeader from "../atoms/pageHeader";
 import SearchSkills from "../molecules/searchSkills";
 import SuggestedTags from "../molecules/suggestedTags";
-import { Button } from "react-native-paper";
+import { Button, Text } from "react-native-paper";
+import AddedSkills from "../molecules/addedSkills";
 
 const PageAddSkill: React.FC = () => {
+  const [addedSkills, setAddedSkills] = useState<string[]>([]);
+
   return (
     <View>
       <View style={styles.container1}>
         <PageHeader title="Add Skill" />
-        <SearchSkills />
+        <SearchSkills
+          addedSkills={addedSkills}
+          handleAddedSkills={setAddedSkills}
+        />
       </View>
 
       <View style={styles.container2}>
+        {addedSkills.length > 0 ? (
+          <AddedSkills skillList={addedSkills} />
+        ) : null}
         <SuggestedTags />
         <Button mode="contained" onPress={() => {}} disabled={true}>
           Save
