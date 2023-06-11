@@ -1,18 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import { StyleSheet, View } from "react-native";
 import PageHeader from "../atoms/pageHeader";
-import SearchTags from "../molecules/searchTags";
+import SearchSkills from "../molecules/searchSkills";
 import SuggestedTags from "../molecules/suggestedTags";
 import { Button } from "react-native-paper";
 
 const PageAddSkill: React.FC = () => {
-  const [searchedTag, setSearchedTag] = useState<string>("example");
-
   return (
     <View>
       <View style={styles.container1}>
         <PageHeader title="Add Skill" />
-        <SearchTags />
+        <SearchSkills />
       </View>
 
       <View style={styles.container2}>

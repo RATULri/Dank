@@ -6,7 +6,7 @@ const TagChips: React.FC = () => {
   return (
     <View style={style.container}>
       <Chip onPress={() => {}} mode="outlined" onClose={() => {}}>
-        Example Chip
+        Example
       </Chip>
     </View>
   );
@@ -14,10 +14,10 @@ const TagChips: React.FC = () => {
 
 const style = StyleSheet.create({
   container: {
-    backgroundColor: "yellow",
     flex: 1,
     flexDirection: "row",
     flexWrap: "wrap",
+    gap: 10,
     justifyContent: "flex-start",
     marginBottom: 10,
   },
