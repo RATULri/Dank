@@ -19,6 +19,7 @@ const style = StyleSheet.create({
     flexDirection: "row",
     flexWrap: "wrap",
     justifyContent: "flex-start",
+    marginBottom: 10,
   },
 });
 

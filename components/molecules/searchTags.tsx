@@ -17,10 +17,9 @@ const SearchTags: React.FC = () => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "blue",
     height: 100,
-    paddingLeft: 10,
-    paddingRight: 10,
+    paddingLeft: 15,
+    paddingRight: 1,
   },
 });
 

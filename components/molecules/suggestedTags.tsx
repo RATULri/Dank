@@ -14,13 +14,9 @@ const SuggestedTags: React.FC = () => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "skyblue",
+    backgroundColor: "#fff",
     // flex: 1,
     height: 500,
-    paddingTop: 10,
-    paddingBottom: 10,
-    paddingLeft: 10,
-    paddingRight: 10,
   },
 });
 
