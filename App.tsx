@@ -1,20 +1,26 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, SafeAreaView } from "react-native";
+import HeaderTitle from "./components/atoms/header";
+import SearchTags from "./components/atoms/searchbar";
+import FeatureTitle from "./components/atoms/featureTitle";
+import TagChips from "./components/atoms/chips";
+import SuggestedTags from "./components/molecules/suggestedTags";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView>
+      <View style={styles.container}>
+        <HeaderTitle title="Add Skill" />
+        <SearchTags />
+        <SuggestedTags />
+      </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
+  // view: { flexDirection: "row" },
   container: {
     flex: 1,
     backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
   },
 });
