@@ -1,26 +1,22 @@
 import { StyleSheet, Text, View, SafeAreaView } from "react-native";
-import HeaderTitle from "./components/atoms/header";
-import SearchTags from "./components/atoms/searchbar";
-import FeatureTitle from "./components/atoms/featureTitle";
-import TagChips from "./components/atoms/chips";
+import PageHeader from "./components/atoms/header";
 import SuggestedTags from "./components/molecules/suggestedTags";
+import SearchTags from "./components/molecules/searchTags";
+import PageAddSkill from "./components/pages/addSkillPage";
 
 export default function App() {
   return (
     <SafeAreaView>
       <View style={styles.container}>
-        <HeaderTitle title="Add Skill" />
-        <SearchTags />
-        <SuggestedTags />
+        <PageAddSkill />
       </View>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  // view: { flexDirection: "row" },
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "#F6F8FA",
   },
 });

@@ -17,7 +17,6 @@ const FeatureTitle: React.FC<FeatureTitleProps> = (
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "green",
     // flex: 1,
     paddingTop: 10,
     paddingBottom: 10,

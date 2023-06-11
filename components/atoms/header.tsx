@@ -5,7 +5,7 @@ type HeaderTitleProps = {
   title: string;
 };
 
-const HeaderTitle: React.FC<HeaderTitleProps> = (props: HeaderTitleProps) => {
+const PageHeader: React.FC<HeaderTitleProps> = (props: HeaderTitleProps) => {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>{props.title}</Text>
@@ -26,4 +26,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default HeaderTitle;
+export default PageHeader;
