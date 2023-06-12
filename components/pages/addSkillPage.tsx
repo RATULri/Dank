@@ -5,9 +5,11 @@ import SearchSkillsFeature from "../organisms/searchSkillsFeature";
 import SuggestedTags from "../molecules/suggestedTags";
 import { Button, Text } from "react-native-paper";
 import AddedSkills from "../molecules/addedSkills";
+import { suggestedTagList } from "../../assets/constants/suggestedTags";
 
 const PageAddSkill: React.FC = () => {
   const [addedSkills, setAddedSkills] = useState<string[]>([]);
+  const [suggestedTags, setSuggestedTags] = useState(suggestedTagList);
 
   return (
     <View>
@@ -27,11 +29,18 @@ const PageAddSkill: React.FC = () => {
           />
         ) : null}
 
-        <SuggestedTags handleTags={setAddedSkills} />
+        <SuggestedTags
+          suggestedTags={suggestedTags}
+          setSuggestedTags={setSuggestedTags}
+          handleTags={setAddedSkills}
+        />
 
         <Button
           mode="contained"
-          onPress={() => {}}
+          onPress={() => {
+            setAddedSkills([]);
+            setSuggestedTags(suggestedTagList);
+          }}
           disabled={addedSkills.length > 0 ? false : true}
         >
           Save

@@ -3,35 +3,23 @@ import { StyleSheet, View } from "react-native";
 import FeatureTitle from "../atoms/featureTitle";
 import TagChips, { ChipMode } from "../atoms/chips";
 
-const suggestedTagList = [
-  "Tag 1",
-  "Tag 2",
-  "Tag 3",
-  "Tag 4",
-  "Tag 5",
-  "Tag 6",
-  "Tag 7",
-  "Tag 8",
-  "Tag 9",
-];
-
 type SuggestedTagsProps = {
+  suggestedTags: string[];
+  setSuggestedTags: React.Dispatch<React.SetStateAction<string[]>>;
   handleTags: React.Dispatch<React.SetStateAction<string[]>>;
 };
 
 const SuggestedTags: React.FC<SuggestedTagsProps> = (
   props: SuggestedTagsProps
 ) => {
-  const [suggestedTags, setSuggestedTags] = useState(suggestedTagList);
-
   return (
     <View style={styles.container}>
       <FeatureTitle title="Add suggested tags" />
       <TagChips
-        chipNames={suggestedTags}
+        chipNames={props.suggestedTags}
         mode={ChipMode.outlined}
         onPressHandler={props.handleTags}
-        onCloseHandler={setSuggestedTags}
+        onCloseHandler={props.setSuggestedTags}
       />
     </View>
   );
