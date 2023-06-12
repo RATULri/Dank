@@ -10,7 +10,7 @@ type SearchSkillsProps = {
 const SearchSkills: React.FC<SearchSkillsProps> = (
   props: SearchSkillsProps
 ) => {
-  const [searchedSkill, setSearchedSkill] = useState<string>();
+  const [searchedSkill, setSearchedSkill] = useState<string>("");
 
   return (
     <View>
@@ -18,18 +18,20 @@ const SearchSkills: React.FC<SearchSkillsProps> = (
         <Searchbar
           placeholder="Start typing to search"
           onChangeText={(e) => setSearchedSkill(e)}
-          value={searchedSkill ?? ""}
+          value={searchedSkill}
           mode="view"
         />
       </View>
+
       {searchedSkill && (
         <View style={styles.searchedSkillContainer}>
           <Text style={styles.searchedSkillText}>{searchedSkill}</Text>
           <Button
             mode="outlined"
-            onPress={() =>
-              props.handleAddedSkills([...props.addedSkills, searchedSkill])
-            }
+            onPress={() => {
+              props.handleAddedSkills([...props.addedSkills, searchedSkill]);
+              setSearchedSkill("");
+            }}
           >
             Add
           </Button>

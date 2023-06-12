@@ -3,15 +3,17 @@ import { StyleSheet, Text, View } from "react-native";
 import { Chip } from "react-native-paper";
 
 type TagChipProps = {
-  chipName: string;
+  chipName: string[];
 };
 
 const TagChips: React.FC<TagChipProps> = (props: TagChipProps) => {
   return (
     <View style={style.container}>
-      <Chip onPress={() => {}} mode="outlined" onClose={() => {}}>
-        {props.chipName}
-      </Chip>
+      {props.chipName.map((name, index) => (
+        <Chip onPress={() => {}} mode="outlined" onClose={() => {}} key={index}>
+          {name}
+        </Chip>
+      ))}
     </View>
   );
 };

@@ -24,7 +24,11 @@ const PageAddSkill: React.FC = () => {
           <AddedSkills skillList={addedSkills} />
         ) : null}
         <SuggestedTags />
-        <Button mode="contained" onPress={() => {}} disabled={true}>
+        <Button
+          mode="contained"
+          onPress={() => {}}
+          disabled={addedSkills.length > 0 ? false : true}
+        >
           Save
         </Button>
       </View>

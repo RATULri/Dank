@@ -9,7 +9,7 @@ const SuggestedTags: React.FC = () => {
   return (
     <View style={styles.container}>
       <FeatureTitle title="Add suggested tags" />
-      <TagChips chipName={suggestedTagList[0]} />
+      <TagChips chipName={suggestedTagList} />
     </View>
   );
 };

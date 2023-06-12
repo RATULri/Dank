@@ -9,7 +9,7 @@ type AddedSkillsProps = {
 const AddedSkills: React.FC<AddedSkillsProps> = (props: AddedSkillsProps) => {
   return (
     <View style={styles.container}>
-      <TagChips chipName={props.skillList[0]} />
+      <TagChips chipName={props.skillList} />
     </View>
   );
 };
