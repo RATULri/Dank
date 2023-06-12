@@ -7,7 +7,7 @@ type SearchSkillsProps = {
   handleAddedSkills: React.Dispatch<React.SetStateAction<string[]>>;
 };
 
-const SearchSkills: React.FC<SearchSkillsProps> = (
+const SearchSkillsFeature: React.FC<SearchSkillsProps> = (
   props: SearchSkillsProps
 ) => {
   const [searchedSkill, setSearchedSkill] = useState<string>("");
@@ -63,4 +63,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SearchSkills;
+export default SearchSkillsFeature;

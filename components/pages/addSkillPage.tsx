@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { StyleSheet, View } from "react-native";
 import PageHeader from "../atoms/pageHeader";
-import SearchSkills from "../molecules/searchSkills";
+import SearchSkillsFeature from "../organisms/searchSkillsFeature";
 import SuggestedTags from "../molecules/suggestedTags";
 import { Button, Text } from "react-native-paper";
 import AddedSkills from "../molecules/addedSkills";
@@ -13,7 +13,7 @@ const PageAddSkill: React.FC = () => {
     <View>
       <View style={styles.searchContainer}>
         <PageHeader title="Add Skill" />
-        <SearchSkills
+        <SearchSkillsFeature
           addedSkills={addedSkills}
           handleAddedSkills={setAddedSkills}
         />
