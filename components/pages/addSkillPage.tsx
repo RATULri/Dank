@@ -11,7 +11,7 @@ const PageAddSkill: React.FC = () => {
 
   return (
     <View>
-      <View style={styles.container1}>
+      <View style={styles.searchContainer}>
         <PageHeader title="Add Skill" />
         <SearchSkills
           addedSkills={addedSkills}
@@ -19,11 +19,16 @@ const PageAddSkill: React.FC = () => {
         />
       </View>
 
-      <View style={styles.container2}>
+      <View style={styles.tagsContainer}>
         {addedSkills.length > 0 ? (
-          <AddedSkills skillList={addedSkills} />
+          <AddedSkills
+            skillList={addedSkills}
+            handleSkillList={setAddedSkills}
+          />
         ) : null}
-        <SuggestedTags />
+
+        <SuggestedTags handleTags={setAddedSkills} />
+
         <Button
           mode="contained"
           onPress={() => {}}
@@ -37,10 +42,10 @@ const PageAddSkill: React.FC = () => {
 };
 
 const styles = StyleSheet.create({
-  container1: {
+  searchContainer: {
     backgroundColor: "#fff",
   },
-  container2: {
+  tagsContainer: {
     backgroundColor: "#fff",
     marginTop: 20,
     paddingTop: 10,

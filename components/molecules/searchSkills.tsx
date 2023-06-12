@@ -32,6 +32,7 @@ const SearchSkills: React.FC<SearchSkillsProps> = (
               props.handleAddedSkills([...props.addedSkills, searchedSkill]);
               setSearchedSkill("");
             }}
+            disabled={props.addedSkills.includes(searchedSkill) ? true : false}
           >
             Add
           </Button>

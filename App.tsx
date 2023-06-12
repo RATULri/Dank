@@ -4,9 +4,7 @@ import PageAddSkill from "./components/pages/addSkillPage";
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
-      <View>
-        <PageAddSkill />
-      </View>
+      <PageAddSkill />
     </SafeAreaView>
   );
 }

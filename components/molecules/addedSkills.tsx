@@ -1,15 +1,20 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
-import TagChips from "../atoms/chips";
+import TagChips, { ChipMode } from "../atoms/chips";
 
 type AddedSkillsProps = {
   skillList: string[];
+  handleSkillList: React.Dispatch<React.SetStateAction<string[]>>;
 };
 
 const AddedSkills: React.FC<AddedSkillsProps> = (props: AddedSkillsProps) => {
   return (
     <View style={styles.container}>
-      <TagChips chipName={props.skillList} />
+      <TagChips
+        chipNames={props.skillList}
+        onCloseHandler={props.handleSkillList}
+        mode={ChipMode.flat}
+      />
     </View>
   );
 };
