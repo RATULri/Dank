@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View, ScrollView } from "react-native";
 import PageHeader from "../atoms/pageHeader";
 import SearchSkillsFeature from "../organisms/searchSkillsFeature";
 import SuggestedTags from "../molecules/suggestedTags";
@@ -22,21 +22,26 @@ const PageAddSkill: React.FC = () => {
       </View>
 
       <View style={styles.tagsContainer}>
-        {addedSkills.length > 0 ? (
-          <AddedSkills
-            skillList={addedSkills}
-            handleSkillList={setAddedSkills}
-          />
-        ) : null}
+        <View style={{ minHeight: 0 }}>
+          {addedSkills.length > 0 ? (
+            <AddedSkills
+              skillList={addedSkills}
+              handleSkillList={setAddedSkills}
+            />
+          ) : null}
+        </View>
 
-        <SuggestedTags
-          suggestedTags={suggestedTags}
-          setSuggestedTags={setSuggestedTags}
-          handleTags={setAddedSkills}
-        />
+        <View style={{ height: 200 }}>
+          <SuggestedTags
+            suggestedTags={suggestedTags}
+            setSuggestedTags={setSuggestedTags}
+            handleTags={setAddedSkills}
+          />
+        </View>
 
         <Button
           mode="contained"
+          // buttonColor="blue"
           onPress={() => {
             setAddedSkills([]);
             setSuggestedTags(suggestedTagList);
@@ -55,12 +60,12 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
   },
   tagsContainer: {
-    backgroundColor: "#fff",
     marginTop: 20,
     paddingTop: 10,
-    paddingBottom: 10,
+    paddingBottom: 15,
     paddingLeft: 10,
     paddingRight: 10,
+    backgroundColor: "#fff",
   },
 });
 

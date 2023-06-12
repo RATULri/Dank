@@ -28,8 +28,8 @@ const SuggestedTags: React.FC<SuggestedTagsProps> = (
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "#fff",
-    // flex: 1,
-    height: 300,
+    flex: 1,
+    minHeight: 200,
   },
 });
 

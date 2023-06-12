@@ -21,8 +21,10 @@ const AddedSkills: React.FC<AddedSkillsProps> = (props: AddedSkillsProps) => {
 
 const styles = StyleSheet.create({
   container: {
-    height: 100,
-    paddingTop: 20,
+    flexGrow: 1,
+    flexDirection: "row",
+    minHeight: 100,
+    paddingTop: 10,
     borderBottomColor: "black",
     borderBottomWidth: StyleSheet.hairlineWidth,
   },
